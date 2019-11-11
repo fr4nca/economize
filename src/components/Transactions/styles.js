@@ -24,5 +24,11 @@ export default StyleSheet.create({
   },
   button: {
     marginLeft: 'auto',
+    borderRadius: 50,
+    backgroundColor: '#7159c1',
+    padding: 8,
+  },
+  buttonText: {
+    color: '#fff',
   },
 });

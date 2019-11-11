@@ -1,28 +1,15 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
 export default StyleSheet.create({
-  card: {
-    alignItems: 'center',
-    padding: 20,
-    backgroundColor: '#ffffff',
-    marginTop: 50,
-    width: Dimensions.get('window').width - 40,
-    borderRadius: 10,
-    height: 150,
+  trans: {
+    padding: 15,
   },
-  title: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginTop: -8,
+  textGreen: {
+    fontSize: 20,
+    color: 'green',
   },
-  header: {
-    display: 'flex',
-    flexDirection: 'row',
-    width: 100 + '%',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  button: {
-    marginLeft: 'auto',
+  textRed: {
+    fontSize: 20,
+    color: 'red',
   },
 });

@@ -10,8 +10,8 @@ import {
 
 const BalanceState = props => {
   const initialState = {
-    balance: 198,
-    transactions: [100, 60, 38],
+    balance: 0,
+    transactions: [100, 60, 38, -10, 40, -100, 20, 24, 15, -100],
   };
 
   const [state, dispatch] = useReducer(balanceReducer, initialState);
