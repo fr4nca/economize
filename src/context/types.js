@@ -1,0 +1,4 @@
+export const GET_BALANCE = 'GET_BALANCE';
+export const ADD_TRANSACTION = 'ADD_TRANSACTION';
+export const ADD_TO_BALANCE = 'ADD_TO_BALANCE';
+export const GET_TRANSACTIONS = 'GET_TRANSACTIONS';
