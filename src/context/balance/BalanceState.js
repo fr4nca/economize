@@ -11,7 +11,40 @@ import {
 const BalanceState = props => {
   const initialState = {
     balance: 0,
-    transactions: [100, 60, 38, -10, 40, -100, 20, 24, 15, -100],
+    transactions: [
+      {
+        value: 10,
+        id: 1,
+      },
+      {
+        value: 200,
+        id: 2,
+      },
+      {
+        value: -100,
+        id: 3,
+      },
+      {
+        value: 105,
+        id: 4,
+      },
+      {
+        value: 1,
+        id: 5,
+      },
+      {
+        value: -28,
+        id: 6,
+      },
+      {
+        value: -20,
+        id: 7,
+      },
+      {
+        value: 300,
+        id: 8,
+      },
+    ],
   };
 
   const [state, dispatch] = useReducer(balanceReducer, initialState);
@@ -35,11 +68,11 @@ const BalanceState = props => {
     });
   };
 
-  const addTransaction = async value => {
-    addToBalance(value);
+  const addTransaction = async trans => {
+    addToBalance(Number(trans.value));
     dispatch({
       type: ADD_TRANSACTION,
-      payload: value,
+      payload: trans,
     });
   };
 

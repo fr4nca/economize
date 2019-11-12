@@ -15,8 +15,14 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     marginTop: -8,
   },
-  balance: {
+  balanceRed: {
     fontSize: 50,
     marginTop: 10,
+    color: 'red',
+  },
+  balanceGreen: {
+    fontSize: 50,
+    marginTop: 10,
+    color: 'green',
   },
 });

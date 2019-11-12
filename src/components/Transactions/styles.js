@@ -31,4 +31,11 @@ export default StyleSheet.create({
   buttonText: {
     color: '#fff',
   },
+  closeButton: {
+    color: '#7159c1',
+  },
+  textInput: {
+    borderColor: '#7159c1',
+    borderWidth: 1,
+  },
 });

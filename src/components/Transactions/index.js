@@ -6,43 +6,52 @@ import styles from './styles';
 
 import BalanceContext from '../../context/balance/balanceContext';
 import Transaction from '../Transaction';
-import TransactionModal from './TransactionModal';
+import InputDialog from './InputDialog';
 
 const Transactions = () => {
   const balanceContext = useContext(BalanceContext);
   const { transactions, getTransactions, addTransaction } = balanceContext;
 
-  const [modalVisible, setModalVisible] = useState(false);
+  const [addInput, setAddInput] = useState(false);
 
   useEffect(() => {
     getTransactions();
   }, []);
 
-  const openModal = () => {
-    setModalVisible(true);
+  const openModal = value => {
+    setAddInput(value);
   };
 
-  const handleAddTransaction = value => {
-    addTransaction(value);
+  const add = value => {
+    const trans = {
+      value,
+      id: transactions.length + 1,
+    };
+    addTransaction(trans);
+
+    openModal(false);
   };
 
   return (
     <View style={styles.card}>
       <View style={styles.header}>
         <Text style={styles.title}>Transactions</Text>
-        <TouchableHighlight style={styles.button} title="+" onPress={openModal}>
+        <TouchableHighlight
+          style={styles.button}
+          title="+"
+          onPress={() => openModal(true)}>
           <Text style={styles.buttonText}>Add</Text>
         </TouchableHighlight>
       </View>
-      <TransactionModal
-        modalVisible={modalVisible}
-        setModalVisible={setModalVisible}
-        addTransaction={handleAddTransaction}
+      <InputDialog
+        visible={addInput}
+        closeDialog={openModal}
+        addTransaction={add}
       />
       <FlatList
         data={transactions}
         renderItem={({ item }) => <Transaction trans={item} />}
-        keyExtractor={trans => trans.toString()}
+        keyExtractor={trans => trans.id.toString()}
       />
     </View>
   );

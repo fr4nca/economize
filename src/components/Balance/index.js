@@ -17,7 +17,9 @@ const Balance = () => {
   return (
     <View style={styles.card}>
       <Text style={styles.title}>Balance</Text>
-      <Text style={styles.balance}>R$ {balance}</Text>
+      <Text style={balance >= 0 ? styles.balanceGreen : styles.balanceRed}>
+        R$ {balance}
+      </Text>
     </View>
   );
 };

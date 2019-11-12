@@ -10,7 +10,7 @@ export default (state, action) => {
     case GET_BALANCE:
       return {
         ...state,
-        balance: state.transactions.reduce((a, b) => a + b),
+        balance: state.transactions.reduce((a, b) => a + b.value, 0),
       };
     case ADD_TO_BALANCE:
       return {
