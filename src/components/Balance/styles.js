@@ -4,7 +4,7 @@ export default StyleSheet.create({
   card: {
     alignItems: 'center',
     padding: 20,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#F5F5F5',
     marginTop: 50,
     width: Dimensions.get('window').width - 40,
     borderRadius: 10,

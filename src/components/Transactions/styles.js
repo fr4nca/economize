@@ -6,7 +6,7 @@ export default StyleSheet.create({
     marginBottom: 20,
     marginTop: 20,
     padding: 20,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#f5f5f5',
     width: Dimensions.get('window').width - 40,
     borderRadius: 10,
   },
@@ -37,5 +37,10 @@ export default StyleSheet.create({
   textInput: {
     borderColor: '#7159c1',
     borderWidth: 1,
+    borderRadius: 5,
+    paddingHorizontal: 10,
+  },
+  container: {
+    padding: -30,
   },
 });
