@@ -4,7 +4,7 @@ import { View, Text, TouchableHighlight, FlatList } from 'react-native';
 
 import styles from './styles';
 
-import BalanceContext from '../../context/balance/balanceContext';
+import BalanceContext from '~/context/balance/balanceContext';
 import Transaction from '../Transaction';
 import InputDialog from './InputDialog';
 

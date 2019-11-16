@@ -3,7 +3,7 @@ import React, { useContext, useEffect } from 'react';
 import { View, Text } from 'react-native';
 
 import styles from './styles';
-import BalanceContext from '../../context/balance/balanceContext';
+import BalanceContext from '~/context/balance/balanceContext';
 
 const Balance = () => {
   const balanceContext = useContext(BalanceContext);
