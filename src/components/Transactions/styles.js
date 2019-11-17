@@ -43,4 +43,10 @@ export default StyleSheet.create({
   container: {
     padding: -30,
   },
+  error: {
+    color: 'red',
+    fontSize: 12,
+    marginTop: -10,
+    marginLeft: 10,
+  },
 });

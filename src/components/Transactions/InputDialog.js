@@ -28,18 +28,10 @@ const InputDialog = ({ visible, closeDialog, addTransaction }) => {
           keyboardType="numeric"
           value={value}
           onChangeText={text => setValue(text)}
+          autoFocus
+          enablesReturnKeyAutomatically
         />
-        {error && (
-          <Text
-            style={{
-              color: 'red',
-              fontSize: 12,
-              marginTop: -10,
-              marginLeft: 10,
-            }}>
-            Valor não pode ser vazio
-          </Text>
-        )}
+        {error && <Text style={styles.error}>Valor não pode ser vazio</Text>}
         <Dialog.Button
           style={styles.button}
           label="Add"
