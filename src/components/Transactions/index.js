@@ -16,6 +16,7 @@ const Transactions = () => {
 
   useEffect(() => {
     getTransactions();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const openModal = value => {

@@ -12,6 +12,7 @@ const Balance = () => {
 
   useEffect(() => {
     getBalance();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
