@@ -5,11 +5,14 @@ import '~/config/ReactotronConfig';
 import Routes from '~/routes';
 
 import BalanceState from './context/balance/BalanceState';
+import DicasState from './context/dicas/DicasState';
 
 const App = () => {
   return (
     <BalanceState>
-      <Routes />
+      <DicasState>
+        <Routes />
+      </DicasState>
     </BalanceState>
   );
 };

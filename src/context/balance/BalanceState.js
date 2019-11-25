@@ -1,4 +1,6 @@
 import React, { useReducer } from 'react';
+import uuid from 'uuid';
+
 import BalanceContext from './balanceContext';
 import balanceReducer from './balanceReducer';
 import {
@@ -6,6 +8,8 @@ import {
   ADD_TRANSACTION,
   ADD_TO_BALANCE,
   GET_TRANSACTIONS,
+  DELETE_TRANSACTION,
+  SUB_BALANCE,
 } from '../types';
 
 const BalanceState = props => {
@@ -14,35 +18,35 @@ const BalanceState = props => {
     transactions: [
       {
         value: 10,
-        id: 1,
+        id: uuid.v4(),
       },
       {
         value: 200,
-        id: 2,
+        id: uuid.v4(),
       },
       {
         value: -100,
-        id: 3,
+        id: uuid.v4(),
       },
       {
         value: 105,
-        id: 4,
+        id: uuid.v4(),
       },
       {
         value: 1,
-        id: 5,
+        id: uuid.v4(),
       },
       {
         value: -28,
-        id: 6,
+        id: uuid.v4(),
       },
       {
         value: -20,
-        id: 7,
+        id: uuid.v4(),
       },
       {
         value: 300,
-        id: 8,
+        id: uuid.v4(),
       },
     ],
   };
@@ -62,6 +66,13 @@ const BalanceState = props => {
     });
   };
 
+  const subFromBalance = async transaction => {
+    dispatch({
+      type: SUB_BALANCE,
+      payload: transaction,
+    });
+  };
+
   const getTransactions = async () => {
     dispatch({
       type: GET_TRANSACTIONS,
@@ -76,6 +87,14 @@ const BalanceState = props => {
     });
   };
 
+  const deleteTransaction = async trans => {
+    subFromBalance(Number(trans.value));
+    dispatch({
+      type: DELETE_TRANSACTION,
+      payload: trans.id,
+    });
+  };
+
   return (
     <BalanceContext.Provider
       value={{
@@ -84,7 +103,9 @@ const BalanceState = props => {
         getBalance,
         addToBalance,
         addTransaction,
+        deleteTransaction,
         getTransactions,
+        subFromBalance,
       }}>
       {props.children}
     </BalanceContext.Provider>

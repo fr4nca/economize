@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import uuid from 'uuid';
 
 import { View, Text, TouchableHighlight, FlatList } from 'react-native';
 
@@ -26,7 +27,7 @@ const Transactions = () => {
   const add = value => {
     const trans = {
       value,
-      id: transactions.length + 1,
+      id: uuid.v4(),
     };
     addTransaction(trans);
 
